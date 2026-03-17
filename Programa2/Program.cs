@@ -45,10 +45,20 @@ namespace Programa2
             foreach (Producto item in productos)
             {
                 item.MostrarDatos();
-              
-            }
-            
 
+                sumatoria = sumatoria + item.CalcularValor();
+
+                if (item.CalcularValor() > item.CalcularValor())
+                {
+                    elementos = item;
+                }
+
+            }
+
+            Console.Clear();
+            Console.WriteLine("Valor total del inventario: Q" + sumatoria);
+            Console.WriteLine("Mayor precio: ");
+            elementos.MostrarDatos();
 
         }
     }
@@ -93,7 +103,7 @@ class Producto
 
     public void MostrarDatos()
     {
-        Console.WriteLine($"Nombre:  {nombre}  | Precio:   {precio:F4}  | Cantidad:  {cantidad}  | Estado:  {DeterminarEstado()}");
+        Console.WriteLine($"Nombre:  {nombre}  | Precio Q:   {precio:F4}  | Cantidad:  {cantidad}  | Estado:  {DeterminarEstado()}");
     }
 
 }
